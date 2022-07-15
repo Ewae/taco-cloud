@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: #c7ede6;
+}
+
+nav {
+    display: flex;
+    background: #eab436;
+    padding: 8px;
+    align-items: center;
+}
+main {
+    padding: 12px;
+}
+form {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+}
+.header {
+    color: #fff;
+}
+.logo {
+    width: 100px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    gap: 1rem;
+}
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
