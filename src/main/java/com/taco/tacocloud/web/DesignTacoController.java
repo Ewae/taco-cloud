@@ -63,23 +63,23 @@ public class DesignTacoController {
     //     return "redirect:/orders/current";
     // }
 
-    private List<Ingredients> filterByType(List<Ingredients> ingredients, Type type) {
+    // private List<Ingredients> filterByType(List<Ingredients> ingredients, Type type) {
 
-        return ingredients.stream()
-                .filter(x -> x.getType().equals(type))
-                .collect(Collectors.toList());
+    //     return ingredients.stream()
+    //             .filter(x -> x.getType().equals(type))
+    //             .collect(Collectors.toList());
     
-    }
+    // }
 
-    //test
-    private static List<Ingredients> ingredients = Arrays.asList(
-        new Ingredients("FLTO", "Flour Tortilla", Type.WRAP),
-        new Ingredients("COTO", "Corn Tortilla", Type.WRAP)
-    );
+    // //test
+    // private static List<Ingredients> ingredients = Arrays.asList(
+    //     new Ingredients("FLTO", "Flour Tortilla", Type.WRAP),
+    //     new Ingredients("COTO", "Corn Tortilla", Type.WRAP)
+    // );
     
-    //test
-    public static void main(String[] args) {
-        System.out.println(ingredients.stream());
-    }
+    // //test
+    // public static void main(String[] args) {
+    //     System.out.println(ingredients.stream());
+    // }
     
 }
