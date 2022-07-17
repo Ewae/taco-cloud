@@ -57,13 +57,13 @@ public class DesignTacoController {
         return "design";
     }
 
-    // @PostMapping
-    // public String processDesign(Design design){
-    //     // Save the taco design
-    //     // Chapter 3
-    //     log.info("Processing design: " + design);
-    //     return "redirect:/orders/current";
-    // }
+    @PostMapping
+    public String processDesign(Taco design){
+        // Save the taco design
+        // Chapter 3
+        log.info("Processing design: " + design);
+        return "redirect:/orders/current";
+    }
     
     private List<Ingredients> filterByType(List<Ingredients> ingredients, Type type) {
 

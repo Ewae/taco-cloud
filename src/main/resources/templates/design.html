@@ -15,7 +15,7 @@
   </nav>
 
   <main>
-    <form action="" method="POST" th:object="${design}">
+    <form method="POST" th:object="${design}">
 
       <h1>Design Your Taco</h1>
 
@@ -70,7 +70,7 @@
       <!--Div for form footer-->
       <div class="form-footer">
         <h3>Name your taco</h3>
-        <input type="text"> <!--th:field="*{name}"-->
+        <input type="text" th:field="*{name}"> <!--th:field="*{name}"-->
         <br>
         <button>Submit your taco</button>
       </div>
