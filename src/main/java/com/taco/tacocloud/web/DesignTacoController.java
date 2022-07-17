@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -48,6 +49,7 @@ public class DesignTacoController {
         Type[] types = Ingredients.Type.values();
         for (Type type: types){
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
+            System.out.println(type.toString().toLowerCase() +"-"+ filterByType(ingredients, type));
         }
 
         model.addAttribute("design", new Taco());
@@ -62,14 +64,14 @@ public class DesignTacoController {
     //     log.info("Processing design: " + design);
     //     return "redirect:/orders/current";
     // }
-
-    // private List<Ingredients> filterByType(List<Ingredients> ingredients, Type type) {
-
-    //     return ingredients.stream()
-    //             .filter(x -> x.getType().equals(type))
-    //             .collect(Collectors.toList());
     
-    // }
+    private List<Ingredients> filterByType(List<Ingredients> ingredients, Type type) {
+
+        return ingredients.stream()
+                .filter(x -> x.getType().equals(type))
+                .collect(Collectors.toList());
+    
+    }
 
     // //test
     // private static List<Ingredients> ingredients = Arrays.asList(
