@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-
-
-<html xmlns="http://www.w3.org/1999/xhtml"
- xmlns:th="http://www.thymeleaf.org">
+<html lang="en" >
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{styles/style.css}">
+    <link rel="stylesheet" href="styles/style.css">
+
 </head>
  <body>
 
   <nav>
-    <img th:src="@{/images/taco-cloud.png}" class="logo"/>
+    <img src="images/taco-cloud.png" class="logo"/>
     <h1 class="header">Taco Cloud</h1>      
   </nav>
 
@@ -24,47 +25,57 @@
         <!--Div for wrappers-->
         <div class="ingredient-group" id="wraps" >
           <h3>Designate your wrap:</h3>
-          <div th:each="ingredient: ${wrap}">
-            <input type="checkbox" name="ingredients" th:value="${ingredient.id}">
-            <span th:text="${ingredient.name}">INGREDIENT</span>
+          {{#wrap}}
+          <div>
+            <input type="checkbox" name="ingredients" {{id}}>
+            <span>{{name}}</span>
             <br>
           </div>
+          {{/wrap}}
         </div>
         <!--Div for proteins-->
         <div class="ingredient-group" id="proteins" >
           <h3>Pick your protein:</h3>
-          <div th:each="ingredient: ${protein}">
-            <input type="checkbox" name="ingredients" th:value="${ingredient.id}">
-            <span th:text="${ingredient.name}">INGREDIENT</span>
+          {{#protein}}
+          <div>
+            <input type="checkbox" name="ingredients" {{id}}>
+            <span>{{name}}</span>
             <br>
           </div>
+          {{/protein}}
         </div>
         <!--Div for cheese-->
         <div class="ingredient-group" id="cheeses" >
           <h3>Choose your cheese:</h3>
-          <div th:each="ingredient: ${cheese}">
-            <input type="checkbox" name="ingredients" th:value="${ingredient.id}">
-            <span th:text="${ingredient.name}">INGREDIENT</span>
+          {{#cheese}}
+          <div>
+            <input type="checkbox" name="ingredients" {{id}}>
+            <span>{{name}}</span>
             <br>
           </div>
+          {{/cheese}}
         </div>
         <!--Div for veggies-->
         <div class="ingredient-group" id="veggies" >
           <h3>Determine your veggies:</h3>
-          <div th:each="ingredient: ${veggies}">
-            <input type="checkbox" name="ingredients" th:value="${ingredient.id}">
-            <span th:text="${ingredient.name}">INGREDIENT</span>
+          {{#veggies}}
+          <div>
+            <input type="checkbox" name="ingredients" {{id}}>
+            <span>{{name}}</span>
             <br>
           </div>
+          {{/veggies}}
         </div>
         <!--Div for sauce-->
         <div class="ingredient-group" id="sauce" >
           <h3>Select your sauce:</h3>
-          <div th:each="ingredient: ${sauce}">
-            <input type="checkbox" name="ingredients" th:value="${ingredient.id}">
-            <span th:text="${ingredient.name}">INGREDIENT</span>
+          {{#sauce}}
+          <div>
+            <input type="checkbox" name="ingredients" {{id}}>
+            <span>{{name}}</span>
             <br>
           </div>
+          {{/sauce}}
         </div>
       </div>
       <!--Div for form footer-->

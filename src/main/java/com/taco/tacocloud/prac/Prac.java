@@ -2,10 +2,10 @@ package com.taco.tacocloud.prac;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
+// import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +15,9 @@ import com.taco.tacocloud.prac.Person.Gender;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+// import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+// @Slf4j
 @Controller
 @RequestMapping("/prac")
 public class Prac {

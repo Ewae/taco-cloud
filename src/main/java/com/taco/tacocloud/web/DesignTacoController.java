@@ -1,13 +1,13 @@
 package com.taco.tacocloud.web;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -49,7 +49,7 @@ public class DesignTacoController {
         Type[] types = Ingredients.Type.values();
         for (Type type: types){
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
-            System.out.println(type.toString().toLowerCase() +"-"+ filterByType(ingredients, type));
+            // System.out.println(type.toString().toLowerCase() +"-"+ filterByType(ingredients, type));
         }
 
         model.addAttribute("design", new Taco());
@@ -58,7 +58,11 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(Taco design){
+    public String processDesign(@Valid Taco design, Errors errors){
+        if(errors.hasErrors()){
+            
+            return "design";
+        }
         // Save the taco design
         // Chapter 3
         log.info("Processing design: " + design);
